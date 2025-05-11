@@ -7,14 +7,18 @@ sudo -i
 1. hostnamectl set-hostname ansible/dev-1/dev-2/test-1/test-2
 sudo -i
 
+
+#slave servers
 2. passwd root
 3. vim /etc/ssh/sshd_config (uncomment: 38 , no=yes: 63)
 4. systemctl restart sshd
 5. systemctl status sshd
 
+#master
 ANSIBLE SERVER:
 amazon-linux-extras install ansible2 -y
 yum install python python-pip python-dlevel -y
+vim /etc/ansible =vim ansile.cfg  (#remove)inventory 
 vim /etc/ansible/hosts   (inventory file)  (below: 12 th line)
 
 [dev]
@@ -43,3 +47,10 @@ ctrl + d
 ssh-copy-id root@private_ip of test-2 -- > yes -- > password 
 ssh private_ip of test-2
 ctrl + d
+
+
+
+
+ansible all -m ping
+ansible dev -m ping
+ansible test -m ping
