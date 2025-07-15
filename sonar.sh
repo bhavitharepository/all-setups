@@ -5,7 +5,7 @@ cd /opt/
 wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.6.50800.zip
 unzip sonarqube-8.9.6.50800.zip
 useradd sonar
-chown - R sonar:sonar sonarqube-8.9.6.50800 
+chown -R sonar:sonar sonarqube-8.9.6.50800
 //chmod 777 sonarqube-8.9.6.50800 -R
 su - sonar
 ==[/opt/sonarqube-8.9.6.50800/bin/linux-x86-64]
